@@ -16,7 +16,33 @@ public class pica {
 		//Features: piedavat klientam dzerienu
 
 		
-		ssss
+		class PizzaOrder {
+		    String vards;
+		    String adrese;
+		    String telefonaNumurs;
+		    String size;
+		    ArrayList<String> toppings;
+		    ArrayList<String> merces;
+		    ArrayList<String> kadapica;
+		    boolean delivery;
+		    boolean delivered;
+		    double price;
+		    public PizzaOrder(ArrayList<String> kadapica, String vards, String adrese, String telefonaNumurs, String size, ArrayList<String> toppings,
+		            ArrayList<String> merces, boolean delivery) {
+		        this.vards = vards;
+		        this.adrese = adrese;
+		        this.telefonaNumurs = telefonaNumurs;
+		        this.kadapica = kadapica;
+		        this.size = size;
+		        this.toppings = toppings;
+		        this.merces = merces;
+		        this.delivery = delivery;
+		        this.delivered = false;
+		        this.price = calculatePrice();
+		    }
+		    
+		    
+		}
 		
 	}
 }

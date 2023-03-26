@@ -41,6 +41,21 @@ public class pica {
 		        this.price = calculatePrice();
 		    }
 		    
+		    public double calculatePrice() {
+		        double basePrice = 0.0;
+		        if (this.size.equals("Small")) {
+		            basePrice = 6.99;
+		        } else if (this.size.equals("Medium")) {
+		            basePrice = 9.99;
+		        } else if (this.size.equals("Large")) {
+		            basePrice = 12.99;
+		        }
+		        double toppingsPrice = this.toppings.size() * 0.5;
+		        double mercesPrice = this.merces.size() * 0.25;
+		        double deliveryPrice = this.delivery ? 2.0 : 0.0;
+		        return basePrice + toppingsPrice + mercesPrice + deliveryPrice;
+		    }
+		    
 		    
 		}
 		

@@ -56,6 +56,23 @@ public class pica {
 		        return basePrice + toppingsPrice + mercesPrice + deliveryPrice;
 		    }
 		    
+		    public String toString() {
+		        return "Pica veids: " + this.kadapica + "\nVards: " + this.vards + "\nAdrese: " + this.adrese
+		                + "\nTelefonaNumurs: " + this.telefonaNumurs + "\nSize: " + this.size + "\nToppings: "
+		                + this.toppings.toString() + "\nMerces: " + this.merces.toString() + "\nDelivery: " + this.delivery
+		                + "\nDelivered: " + this.delivered + "\nPrice: " + this.price +"$";
+		    }
+		}
+		public class pica {
+		    public static void main(String[] args) {
+		        ArrayList<PizzaOrder> activeOrders = new ArrayList<PizzaOrder>();
+		        ArrayList<PizzaOrder> deliveredOrders = new ArrayList<PizzaOrder>();
+
+		        while (true) {
+		            String[] options = { "Jauns pasutijums", "Paradit aktivus pasutijumus", "Paradit delievered pasutijumus", "Exit" };
+		            int choice = JOptionPane.showOptionDialog(null, "Select an option:", "Pizza Orders", JOptionPane.DEFAULT_OPTION,
+		                    JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+
 		    
 		}
 		

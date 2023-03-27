@@ -104,6 +104,24 @@ public class pica {
 		                    merces.add(selectedMerchandise.toString());
 		                }
 
+		                
+		                
+
+		                Object[] deliveryOptions = { "Yes", "No" };
+		                String delivery = (String) JOptionPane.showInputDialog(null, "Vai pasūtījums ir ar piegādi?",
+		                        "Pizza Orders", JOptionPane.PLAIN_MESSAGE, null, deliveryOptions, deliveryOptions[0]);
+
+		                ArrayList<String> kadapica = new ArrayList<String>();
+		                Object[] pizzaOptions = { "Margarīta", "Pepperoni", "Veģetārijas", "Havaju" };
+		                Object selectedPizza = JOptionPane.showInputDialog(null, "Izvēlies picu:", "Pizza Orders",
+		                        JOptionPane.PLAIN_MESSAGE, null, pizzaOptions, pizzaOptions[0]);
+		                kadapica.add(selectedPizza.toString());
+
+		                PizzaOrder newOrder = new PizzaOrder(kadapica, vards, adrese, telefonaNumurs, size, toppings, merces,
+		                        delivery.equals("Yes"));
+		                activeOrders.add(newOrder);
+
+		                JOptionPane.showMessageDialog(null, "Pasūtījums pievienots!");
 		    
 		}
 		

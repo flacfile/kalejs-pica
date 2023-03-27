@@ -72,6 +72,37 @@ public class pica {
 		            String[] options = { "Jauns pasutijums", "Paradit aktivus pasutijumus", "Paradit delievered pasutijumus", "Exit" };
 		            int choice = JOptionPane.showOptionDialog(null, "Select an option:", "Pizza Orders", JOptionPane.DEFAULT_OPTION,
 		                    JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+		            
+		            
+		            if (choice == 0) {
+		                String vards = JOptionPane.showInputDialog("Ievadi vards:");
+		                String adrese = JOptionPane.showInputDialog("Ievadi adrese:");
+		                String telefonaNumurs = JOptionPane.showInputDialog("Ievadi telefona numuru:");
+		                Object[] sizeOptions = { "Small", "Medium", "Large" };
+		                String size = (String) JOptionPane.showInputDialog(null, "Izvelies izmeru:", "Pizza Orders",
+		                        JOptionPane.PLAIN_MESSAGE, null, sizeOptions, sizeOptions[0]);
+		                ArrayList<String> toppings = new ArrayList<String>();
+		                while (true) {
+		                    Object[] toppingOptions = { "Pepperoni", "Senes", "Sipols", "Ananas", "Siera kubiki", "Olīvas", "Sēnes" };
+		                    Object selectedTopping = JOptionPane.showInputDialog(null, "Izvēlies pildījumu:",
+		                            "Pizza Orders", JOptionPane.PLAIN_MESSAGE, null, toppingOptions, toppingOptions[0]);
+		                    if (selectedTopping == null) {
+		                        break;
+		                    }
+		                    toppings.add(selectedTopping.toString());
+		                }
+
+		                ArrayList<String> merces = new ArrayList<String>();
+		                while (true) {
+		                    Object[] merchandiseOptions = { "Mērce", "Ķiploku mērce", "BBQ mērce", "Siera mērce",
+		                            "Tomātu mērce" };
+		                    Object selectedMerchandise = JOptionPane.showInputDialog(null, "Izvēlies mērci:", "Pizza Orders",
+		                            JOptionPane.PLAIN_MESSAGE, null, merchandiseOptions, merchandiseOptions[0]);
+		                    if (selectedMerchandise == null) {
+		                        break;
+		                    }
+		                    merces.add(selectedMerchandise.toString());
+		                }
 
 		    
 		}

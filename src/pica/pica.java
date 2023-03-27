@@ -1,6 +1,11 @@
 package pica;
-import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.BoxLayout;
+import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 class PizzaOrder {
     String vards;
@@ -15,13 +20,13 @@ class PizzaOrder {
     double price;
 
     public PizzaOrder(ArrayList<String> kadapica, String vards, String adrese, String telefonaNumurs, String size,
-            ArrayList<String> toppings, ArrayList<String> merces, boolean delivery) {
+            List<String> toppings2, ArrayList<String> merces, boolean delivery) {
         this.vards = vards;
         this.adrese = adrese;
         this.telefonaNumurs = telefonaNumurs;
         this.kadapica = kadapica;
         this.size = size;
-        this.toppings = toppings;
+        this.toppings = (ArrayList<String>) toppings2;
         this.merces = merces;
         this.delivery = delivery;
         this.delivered = false;
@@ -68,20 +73,32 @@ public class pica {
                 Object[] sizeOptions = { "Small", "Medium", "Large" };
                 String size = (String) JOptionPane.showInputDialog(null, "Izvelies izmeru:", "Pizza Orders",
                         JOptionPane.PLAIN_MESSAGE, null, sizeOptions, sizeOptions[0]);
-                ArrayList<String> toppings = new ArrayList<String>();
+                
+                
+                List<String> toppings = new ArrayList<>();
                 while (true) {
-                    Object[] toppingOptions = { "Pepperoni", "Senes", "Sipols", "Ananas", "Siera kubiki", "Olīvas", "Sēnes" };
-                    Object selectedTopping = JOptionPane.showInputDialog(null, "Izvēlies pildījumu:",
-                            "Pizza Orders", JOptionPane.PLAIN_MESSAGE, null, toppingOptions, toppingOptions[0]);
-                    if (selectedTopping == null) {
+                    JPanel panel = new JPanel();
+                    panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+                    String[] toppingOptions = {"Pepperoni", "Sēnes", "Sīpols", "Ananas", "Siera kubiki", "Olīvas", "Sēnes"};
+                    JCheckBox[] checkBoxes = new JCheckBox[toppingOptions.length];
+                    for (int i = 0; i < toppingOptions.length; i++) {
+                        checkBoxes[i] = new JCheckBox(toppingOptions[i]);
+                        panel.add(checkBoxes[i]);
+                    }
+                    int result = JOptionPane.showConfirmDialog(null, panel, "Izvēlies pildījumu:", JOptionPane.CANCEL_OPTION);
+                    if (result == JOptionPane.CANCEL_OPTION) {
                         break;
                     }
-                    toppings.add(selectedTopping.toString());
+                    for (JCheckBox checkBox : checkBoxes) {
+                        if (checkBox.isSelected()) {
+                            toppings.add(checkBox.getText());
+                        }
+                    }
                 }
 
                 ArrayList<String> merces = new ArrayList<String>();
                 while (true) {
-                    Object[] merchandiseOptions = { "Mērce", "Ķiploku mērce", "BBQ mērce", "Siera mērce",
+                    Object[] merchandiseOptions = {"Ķiploku mērce", "BBQ mērce", "Siera mērce",
                             "Tomātu mērce" };
                     Object selectedMerchandise = JOptionPane.showInputDialog(null, "Izvēlies mērci:", "Pizza Orders",
                             JOptionPane.PLAIN_MESSAGE, null, merchandiseOptions, merchandiseOptions[0]);

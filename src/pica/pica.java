@@ -20,14 +20,14 @@ class PizzaOrder {
     double price;
 
     public PizzaOrder(ArrayList<String> kadapica, String vards, String adrese, String telefonaNumurs, String size,
-            List<String> toppings2, ArrayList<String> merces, boolean delivery) {
+            List<String> toppings2, List<String> merces2, boolean delivery) {
         this.vards = vards;
         this.adrese = adrese;
         this.telefonaNumurs = telefonaNumurs;
         this.kadapica = kadapica;
         this.size = size;
         this.toppings = (ArrayList<String>) toppings2;
-        this.merces = merces;
+        this.merces =  (ArrayList<String>) merces2;
         this.delivery = delivery;
         this.delivered = false;
         this.price = calculatePrice();
@@ -76,19 +76,16 @@ public class pica {
                 
                 
                 List<String> toppings = new ArrayList<>();
-                while (true) {
-                    JPanel panel = new JPanel();
-                    panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-                    String[] toppingOptions = {"Pepperoni", "Sēnes", "Sīpols", "Ananas", "Siera kubiki", "Olīvas", "Sēnes"};
-                    JCheckBox[] checkBoxes = new JCheckBox[toppingOptions.length];
-                    for (int i = 0; i < toppingOptions.length; i++) {
-                        checkBoxes[i] = new JCheckBox(toppingOptions[i]);
-                        panel.add(checkBoxes[i]);
-                    }
-                    int result = JOptionPane.showConfirmDialog(null, panel, "Izvēlies pildījumu:", JOptionPane.CANCEL_OPTION);
-                    if (result == JOptionPane.CANCEL_OPTION) {
-                        break;
-                    }
+                JPanel panel = new JPanel();
+                panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+                String[] toppingOptions = {"Pepperoni", "Sēnes", "Sīpols", "Ananas", "Siera kubiki", "Olīvas", "Sēnes"};
+                JCheckBox[] checkBoxes = new JCheckBox[toppingOptions.length];
+                for (int i = 0; i < toppingOptions.length; i++) {
+                    checkBoxes[i] = new JCheckBox(toppingOptions[i]);
+                    panel.add(checkBoxes[i]);
+                }
+                int result = JOptionPane.showConfirmDialog(null, panel, "Izvēlies pildījumu:", JOptionPane.OK_OPTION);
+                if (result == JOptionPane.OK_OPTION) {
                     for (JCheckBox checkBox : checkBoxes) {
                         if (checkBox.isSelected()) {
                             toppings.add(checkBox.getText());
@@ -96,17 +93,36 @@ public class pica {
                     }
                 }
 
-                ArrayList<String> merces = new ArrayList<String>();
-                while (true) {
-                    Object[] merchandiseOptions = {"Ķiploku mērce", "BBQ mērce", "Siera mērce",
-                            "Tomātu mērce" };
-                    Object selectedMerchandise = JOptionPane.showInputDialog(null, "Izvēlies mērci:", "Pizza Orders",
-                            JOptionPane.PLAIN_MESSAGE, null, merchandiseOptions, merchandiseOptions[0]);
-                    if (selectedMerchandise == null) {
-                        break;
-                    }
-                    merces.add(selectedMerchandise.toString());
+                
+                List<String> merces = new ArrayList<>();
+                JPanel panel1 = new JPanel();
+                panel1.setLayout(new BoxLayout(panel1, BoxLayout.Y_AXIS));
+                String[] mercesOptions = {"Ķiploku", "BBQ", "Ketcups", "Majonese"};
+                JCheckBox[] checkBoxes1 = new JCheckBox[mercesOptions.length];
+                for (int i = 0; i < mercesOptions.length; i++) {
+                    checkBoxes1[i] = new JCheckBox(mercesOptions[i]);
+                    panel1.add(checkBoxes1[i]);
                 }
+                int result1 = JOptionPane.showConfirmDialog(null, panel1, "Izvēlies merces:", JOptionPane.OK_OPTION);
+                if (result1 == JOptionPane.OK_OPTION) {
+                    for (JCheckBox checkBox : checkBoxes1) {
+                        if (checkBox.isSelected()) {
+                            merces.add(checkBox.getText());
+                        }
+                    }
+                }
+
+  
+
+                
+                
+                
+                
+
+                
+                
+
+
 
                 Object[] deliveryOptions = { "Yes", "No" };
                 String delivery = (String) JOptionPane.showInputDialog(null, "Vai pasūtījums ir ar piegādi?",

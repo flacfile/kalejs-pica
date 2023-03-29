@@ -44,9 +44,9 @@ class PizzaOrder {
             if (this.size.equals("Small")) {
                 basePrice = 5.99;
             } else if (this.size.equals("Medium")) {
-                basePrice = 7.99;
+                basePrice = 6.99;
             } else if (this.size.equals("Large")) {
-                basePrice = 9.99;
+                basePrice = 7.99;
             }
         } else if (this.kadapica.contains("Pepperoni")) {
             if (this.size.equals("Small")) {
@@ -54,15 +54,15 @@ class PizzaOrder {
             } else if (this.size.equals("Medium")) {
                 basePrice = 8.99;
             } else if (this.size.equals("Large")) {
-                basePrice = 10.99;
+                basePrice = 9.99;
             }
         } else if (this.kadapica.contains("Veģetārijas")) {
             if (this.size.equals("Small")) {
                 basePrice = 7.99;
             } else if (this.size.equals("Medium")) {
-                basePrice = 9.99;
+                basePrice = 8.99;
             } else if (this.size.equals("Large")) {
-                basePrice = 11.99;
+                basePrice = 9.99;
             }
         } else if (this.kadapica.contains("Havaju")) {
             if (this.size.equals("Small")) {
@@ -76,17 +76,17 @@ class PizzaOrder {
             if (this.size.equals("Small")) {
                 basePrice = 9.99;
             } else if (this.size.equals("Medium")) {
-                basePrice = 11.99;
+                basePrice = 10.99;
             } else if (this.size.equals("Large")) {
                 basePrice = 13.99;
             }
         } else if (this.kadapica.contains("Vulkanu")) {
             if (this.size.equals("Small")) {
-                basePrice = 10.99;
+                basePrice = 11.99;
             } else if (this.size.equals("Medium")) {
-                basePrice = 12.99;
+                basePrice = 13.99;
             } else if (this.size.equals("Large")) {
-                basePrice = 14.99;
+                basePrice = 15.99;
             }
         }
         double toppingsPrice = this.toppings.size() * 0.5;
@@ -112,7 +112,7 @@ class PizzaOrder {
 
 public class pica {
 	
-	
+
 
     
     public static void main(String[] args) {

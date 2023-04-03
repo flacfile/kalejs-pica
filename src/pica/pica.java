@@ -113,8 +113,11 @@ public class pica {
 
     
     public static void main(String[] args) {
+    	
         ArrayList<PizzaOrder> activeOrders = new ArrayList<PizzaOrder>();
         ArrayList<PizzaOrder> deliveredOrders = new ArrayList<PizzaOrder>();
+        ImageIcon img = new ImageIcon("image.png");
+        JOptionPane.showMessageDialog(null, null, "Welcome to Pizza Top", JOptionPane.INFORMATION_MESSAGE,img);
 
         while (true) {
             String[] options = { "Jauns pasutijums", "Paradit aktivus pasutijumus", "Paradit delievered pasutijumus", "Exit" };

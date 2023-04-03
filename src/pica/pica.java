@@ -200,7 +200,7 @@ public class pica {
                             JOptionPane.PLAIN_MESSAGE);
                 }
             } else if (choice == 2) {
-              //saveOrdersToFile(deliveredOrders);
+
             	if (deliveredOrders.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Nav piegādātu pasūtījumu!");
                 } else {

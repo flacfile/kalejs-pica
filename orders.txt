@@ -1,0 +1,20 @@
+Pica veids: [Margarīta]
+Vards: das
+Adrese: dsadasdas
+TelefonaNumurs: 21212121
+Size: Small
+Toppings: [Siera kubiki]
+Merces: [Ketcups]
+Delivery: true
+Price: 8.74$
+
+Pica veids: [Margarīta]
+Vards: dadasdasdas
+Adrese: dsasdasdas
+TelefonaNumurs: 21122121
+Size: Medium
+Toppings: [Siera kubiki, Olīvas]
+Merces: [Ketcups]
+Delivery: true
+Price: 11.24$
+
